@@ -23,10 +23,9 @@ app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 
 // Setup Index
-app.get('/', function(req,res){
-  res.send("Ini adalah ProjectCollab")
-});
-
+var pages = require('./routes/pages.js');
+// Redirect
+app.use('/', pages);
 
 // Srtup Server
 var port = 3000;
