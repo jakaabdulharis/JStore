@@ -24,8 +24,10 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // Setup Index
 var pages = require('./routes/pages.js');
+var adminPages = require('./routes/admin_pages.js');
 // Redirect
 app.use('/', pages);
+app.use('/admin/pages', adminPages);
 
 // Srtup Server
 var port = 3000;
